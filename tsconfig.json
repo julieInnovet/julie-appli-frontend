@@ -6,15 +6,20 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": false, // Désactivé si non nécessaire
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": true, // Garde "true" si tsc est utilisé uniquement pour les types
     "jsx": "react-jsx",
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "./", // Pour des imports absolus si nécessaire
+    "paths": {
+      "@components/*": ["src/components/*"], // Exemple pour simplifier les imports
+      "@utils/*": ["src/utils/*"]
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
